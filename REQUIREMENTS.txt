@@ -1,0 +1,7 @@
+you will need to install Selenium
+
+run the following commands (I am assuming you have python installed and correctly configured)
+
+pip install selenium
+
+simple.. now download and run
