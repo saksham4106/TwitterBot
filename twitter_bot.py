@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -13,8 +14,8 @@ class SendTweets:
         self.timeIn = timeIn
         self.passIn = passIn
         self.userIn = userIn
-
         self.PATH = "chromedriver.exe"
+        
         self.driver = webdriver.Chrome(self.PATH)
 
     def login(self):
@@ -45,6 +46,8 @@ class SendTweets:
                                                         /div/div/div''')
             tweet.send_keys(f"""{self.tweet}""" + SpamBarrier)
             tweet.send_keys(Keys.CONTROL, Keys.ENTER)
+            
+            
             SpamBarrier += "."
 
 
@@ -76,7 +79,7 @@ if __name__ == "__main__":
     label3 = Label(win, text = "Enter the Time between Each Tweet")
     label3.place(x = 0, y = 50)
     entry3 = Entry(win)
-    entry3.place(x = 0, y = 70)
+    entry3.place(x = 25, y = 70)
 
     label4 = Label(win, text = "Twitter Username")
     label4.place(x=0, y = 100)
@@ -91,10 +94,13 @@ if __name__ == "__main__":
 
 
     button1 = Button(win, text = "Start", command = lambda:startProgram(entry1,entry2,entry3,entry4,entry5))
-    button1.place(x = 50, y = 200)
+    button1.place(x = 150, y = 200)
 
 
     win.mainloop()
+
+
+
 
 
 
